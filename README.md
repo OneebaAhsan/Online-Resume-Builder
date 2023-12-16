@@ -1,5 +1,8 @@
 # Online Resume Builder
-An online resume builder which takes in all the necessary details, such as name, contact, education, experience, links etc and outputs a PDF file containing all the inputted details by the user
+An online resume builder which takes in all the necessary details, such as name, contact, education, experience, links etc and outputs a PDF file containing all the inputted details by the user.  
+
+You can find the live application on [Online Resume Builder](https://resume-online-builder.netlify.app/)  
+
 
 ### How to start the application 
 Download the zip file and once you are done unzipping it, open it in a choice of your IDE. Ensure that you have installed Angular (Version 14), Angular Material library, Font Awesome library, NZ Zorro library and JEST library for the project to function properly. 
