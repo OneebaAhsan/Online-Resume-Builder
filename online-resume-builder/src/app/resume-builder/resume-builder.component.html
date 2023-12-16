@@ -1,7 +1,7 @@
 <div>
   <div class="card">
 
-    <div class="card-header" style="text-align: center;">
+    <div class="card-header" style="text-align: center; font-family: auto;">
       <span style="color: purple; font-size: 32px; font-weight: 700;">Online Resume Builder</span>
       <br>
       <span style="color:black; font-size: 20px;">Build your resume for free</span>
@@ -15,7 +15,7 @@
         <div class="form-row-div">
           <div class="name-container">
             <nz-form-item style="width:400px">
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="firstName">First Name</nz-form-label>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="firstName" style="font-family: cursive;">First Name</nz-form-label>
               <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input cannot be empty">
                 <input nz-input formControlName="firstName" id="firstName" placeholder="First Name" type="text"/>
               </nz-form-control>
@@ -23,7 +23,7 @@
 
             <!-- Last Name -->
             <nz-form-item style="width:400px">
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="lastName">Last Name</nz-form-label>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="lastName" style="font-family: cursive;">Last Name</nz-form-label>
               <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input cannot be empty">
                 <input nz-input formControlName="lastName" id="lastName" placeholder="Last Name" type="text"/>
               </nz-form-control>
@@ -35,7 +35,7 @@
           <!-- Email Address -->
           <div class="form-row-div">
             <nz-form-item style="width: 400px;">
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email" style="font-family: cursive;">E-mail</nz-form-label>
               <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
                 <input nz-input formControlName="email" id="email" placeholder="Email Address" type="email"/>
               </nz-form-control>
@@ -45,7 +45,7 @@
           <!-- Phone Number -->
           <div class="form-row-div">
             <nz-form-item style="width: 400px;">
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired>Contact</nz-form-label>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired style="font-family: cursive;">Contact</nz-form-label>
               <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="resumeFormBuilder.controls['phone']" nzErrorTip="Please input your phone number!">
                 <nz-input-group>
                   <input formControlName="phone" id="'phone'" nz-input type="text" placeholder="Phone Number"/>
@@ -57,7 +57,7 @@
           <!-- Country -->
           <div class="form-row-div">
             <nz-form-item style="width: 400px;">
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="country">Country</nz-form-label>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="country" style="font-family: cursive;">Country</nz-form-label>
               <nz-form-control [nzSm]="14" [nzXs]="24">
                 <input nz-input formControlName="country" id="country" placeholder="Country" type="text"/>
               </nz-form-control>
@@ -104,7 +104,7 @@
         <div class="form-row" >
           <!-- Education Block -->
           <div class="flexContainer" style="display: flex; justify-content: space-between; margin-left: -100px;">
-            <span style="margin-left: 87px; font-weight: bold;">Education</span>
+            <span style="margin-left: 87px; font-weight: bold; font-family: cursive; font-size: 20px;">Education</span>
             <button (click)="addEducation()" type="button" style="margin-left: 250px; border: none;background: transparent;color: purple;">
               <i class="fa fa-plus" aria-hidden="true"></i>
             </button>
@@ -122,7 +122,7 @@
 
               <div class="form-row">
                 <nz-form-item>
-                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="school">School</nz-form-label>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="school" style="font-family: cursive;">School</nz-form-label>
                   <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                     <input nz-input formControlName="school" id="school" placeholder="School Name"/>
                   </nz-form-control>
@@ -131,7 +131,7 @@
 
               <div class="form-row">
                 <nz-form-item>
-                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="degree">Degree</nz-form-label>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="degree" style="font-family: cursive;">Degree</nz-form-label>
                   <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                     <input nz-input formControlName="degree" id="degree" placeholder="Degree"/>
                   </nz-form-control>
@@ -140,7 +140,7 @@
 
               <div class="form-row">
                 <nz-form-item>
-                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="fieldOfStudy">Field of Study</nz-form-label>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="fieldOfStudy" style="font-family: cursive;">Field of Study</nz-form-label>
                   <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                     <input nz-input formControlName="fieldOfStudy" id="fieldOfStudy" placeholder="Field of Study"/>
                   </nz-form-control>
@@ -149,7 +149,7 @@
 
               <div class="form-row">
                 <nz-form-item>
-                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="startYear">Start Year</nz-form-label>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="startYear" style="font-family: cursive;">Start Year</nz-form-label>
                   <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                     <input nz-input formControlName="startYear" id="startYear" placeholder="Start Year" type="date"/>
                     <span *ngIf="education?.get('startYear')?.hasError('startEndMismatch') && (education?.get('startYear')?.dirty || education?.get('endYear')?.dirty)">
@@ -161,7 +161,7 @@
 
               <div class="form-row">
                 <nz-form-item>
-                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="endYear">End Year</nz-form-label>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="endYear" style="font-family: cursive;">End Year</nz-form-label>
                   <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                     <input nz-input formControlName="endYear" id="endYear" placeholder="End Year" type="date"/>
                   </nz-form-control>
@@ -177,7 +177,7 @@
 
         <!-- Experience Block -->
         <div class="flexContainer" style="display: flex; justify-content: space-between; margin-left: -100px;">
-          <span style="margin-left: 87px; font-weight: bold;">Experience</span>
+          <span style="margin-left: 87px; font-weight: bold; font-family: cursive; font-size: 20px;">Experience</span>
           <button (click)="addExperience()" style="margin-left: 241px; border: none;background: transparent;color: purple;">
             <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
@@ -195,7 +195,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="company">Company</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="company" style="font-family: cursive;">Company</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                   <input nz-input formControlName="company" id="company" placeholder="Company"/>
                 </nz-form-control>
@@ -204,7 +204,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="position">Position</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="position" style="font-family: cursive;">Position</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                   <input nz-input formControlName="position" id="position" placeholder="Position"/>
                 </nz-form-control>
@@ -213,7 +213,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="startYear">Start Year</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="startYear" style="font-family: cursive;">Start Year</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                   <input nz-input formControlName="startYear" id="startYear" placeholder="Start Year" type="date"/>
                 </nz-form-control>
@@ -222,7 +222,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="endYear">End Year</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="endYear" style="font-family: cursive;">End Year</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                   <input nz-input formControlName="endYear" id="endYear" placeholder="End Year" type="date"/>
                 </nz-form-control>
@@ -231,7 +231,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="description">Description</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="description" style="font-family: cursive;">Description</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                   <textarea nz-input formControlName="description" id="description" placeholder="Description"></textarea>
                 </nz-form-control>
@@ -245,7 +245,7 @@
 
         <!-- Skills Block -->
         <div class="flexContainer" style="display: flex; justify-content: space-between; margin-left: -100px;">
-          <span style="margin-left: 87px; font-weight: bold;">Skills</span>
+          <span style="margin-left: 87px; font-weight: bold; font-family: cursive; font-size: 20px;">Skills</span>
           <button (click)="addSkills()" style="margin-left: 316px; border: none;background: transparent;color: purple;">
             <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
@@ -263,7 +263,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name" style="font-family: cursive;">Name</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                   <input nz-input formControlName="name" id="name" placeholder="Name"/>
                 </nz-form-control>
@@ -272,7 +272,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="level">Level</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="level" style="font-family: cursive;">Level</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                   <nz-select formControlName="level" id="level" placeholder="Level">
                     <nz-option nzLabel="Beginner" nzValue="Beginner"></nz-option>
@@ -290,7 +290,7 @@
 
         <!-- Projects Block -->
         <div class="flexContainer" style="display:flex; justify-content: space-between; margin-left: -100px;">
-          <span style="margin-left: 87px; font-weight: bold;">Projects</span>
+          <span style="margin-left: 87px; font-weight: bold; font-family: cursive; font-size: 20px;">Projects</span>
           <button (click)="addProjects()" style="margin-left: 280px; border: none;background: transparent;color: purple;">
             <i class="fa fa-plus" aria-hidden="true"></i>
           </button>
@@ -308,7 +308,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="projectName">Name</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="projectName" style="font-family: cursive;">Name</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
                   <input nz-input formControlName="projectName" id="projectName" placeholder="Name"/>
                 </nz-form-control>
@@ -317,7 +317,7 @@
 
             <div class="form-row">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="projectDescription">Description</nz-form-label>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="projectDescription" style="font-family: cursive;">Description</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24">
                   <textarea nz-input formControlName="projectDescription" id="projectDescription" placeholder="Description"></textarea>
                 </nz-form-control>

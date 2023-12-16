@@ -188,7 +188,7 @@ export class ResumeBuilderComponent implements OnInit {
     const linksSection: { width: string; alignment: string; fontSize: number; stack: any[] } = {
       width: 'auto',
       alignment: 'right',
-      fontSize: 12,
+      fontSize: 10,
       stack: []
     };
 
@@ -199,7 +199,7 @@ export class ResumeBuilderComponent implements OnInit {
           text: 'LinkedIn',
           link: formData.linkedInLink,
           color: 'blue',
-          fontSize: 12,
+          fontSize: 10,
           margin: [0, 0, 0, 10]
         }
       ]
@@ -212,7 +212,7 @@ export class ResumeBuilderComponent implements OnInit {
           text: 'GitHub',
           link: formData.githubLink,
           color: 'blue',
-          fontSize: 12,
+          fontSize: 10,
           margin: [0, 0, 0, 10]
         }
       ]
@@ -226,7 +226,7 @@ export class ResumeBuilderComponent implements OnInit {
           text: 'Others',
           link: formData.optionalLink,
           color: 'blue',
-          fontSize: 12,
+          fontSize: 10,
           margin: [0, 0, 0, 10]
         }
       ]
@@ -259,7 +259,8 @@ export class ResumeBuilderComponent implements OnInit {
         text: 'Contact Information',
         style: 'sectionHeader',
         fontSize: 12,
-        fontStyle: 'italic'
+        fontStyle: 'italic',
+        fontFamily: 'Times New Roman'
       },
       {
         columns: [
@@ -295,7 +296,7 @@ export class ResumeBuilderComponent implements OnInit {
       },
       {
         ul: formData.experience.map((experience: any) => ({
-          text: `${experience.position} at ${experience.company} (${experience.startYear} - ${experience.endYear}) - ${experience.description}`,
+          text: `${experience.position} at ${experience.company} (${experience.startYear} - ${experience.endYear}) \n \t ${experience.description}`,
           fontSize: 10
         })),
         margin: [0, 0, 0, 15],
@@ -308,7 +309,7 @@ export class ResumeBuilderComponent implements OnInit {
       },
       {
         ul: formData.projects.map((projects: any) => ({
-          text: `${projects.projectName} - ${projects.projectDescription}`,
+          text: `${projects.projectName} \n \t ${projects.projectDescription}`,
           fontSize: 10
         })),
         margin: [0, 0, 0, 15],
