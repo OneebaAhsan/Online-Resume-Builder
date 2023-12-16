@@ -86,6 +86,11 @@ export class ResumeBuilderComponent implements OnInit {
     };
   }
 
+  //Validate the phone number entered
+  validatePhoneNumber(phoneNumber: string): boolean {
+    return phoneNumber.length === 10 && /^\d+$/.test(phoneNumber) && phoneNumber !== '';
+  }
+
   // getter for education formGroup
   get education(): FormArray {
     return this.resumeFormBuilder.get('education') as FormArray;
