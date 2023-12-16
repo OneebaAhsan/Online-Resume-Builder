@@ -9,7 +9,7 @@
 
     <!-- onFormSubmit() is binded to the function in .ts file -->
     <div class="card-body" style="margin-left: 10px;" style="display: flex; justify-content: center; margin-top: 30px;">
-      <form nz-form id="resumeForm" [formGroup]="resumeFormBuilder">
+      <form nz-form id="resumeForm" (ngSubmit)="onFormSubmit()" [formGroup]="resumeFormBuilder">
 
         <!-- First Name -->
         <div class="form-row-div">
