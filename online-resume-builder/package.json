@@ -24,9 +24,12 @@
     "@fortawesome/fontawesome-free": "^6.5.1",
     "@types/jest": "^29.5.11",
     "font-awesome": "^4.7.0",
+    "html2canvas": "^1.4.1",
     "jest": "^29.7.0",
     "jest-preset-angular": "^13.1.4",
+    "jspdf": "^2.5.1",
     "ng-zorro-antd": "^14.0.0",
+    "pdfmake": "^0.2.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -35,6 +38,7 @@
     "@angular-devkit/build-angular": "^14.2.8",
     "@angular/cli": "~14.2.8",
     "@angular/compiler-cli": "^14.2.0",
+    "@types/pdfmake": "^0.2.8",
     "typescript": "~4.7.2"
   },
   "jest": {
