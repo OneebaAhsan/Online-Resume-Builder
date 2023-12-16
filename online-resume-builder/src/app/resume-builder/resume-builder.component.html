@@ -7,5 +7,359 @@
       <span style="color:black; font-size: 20px;">Build your resume for free</span>
     </div>
 
+    <!-- onFormSubmit() is binded to the function in .ts file -->
+    <div class="card-body" style="margin-left: 10px;" style="display: flex; justify-content: center; margin-top: 30px;">
+      <form nz-form id="resumeForm" [formGroup]="resumeFormBuilder">
+
+        <!-- First Name -->
+        <div class="form-row-div">
+          <div class="name-container">
+            <nz-form-item style="width:400px">
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="firstName">First Name</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input cannot be empty">
+                <input nz-input formControlName="firstName" id="firstName" placeholder="First Name" type="text"/>
+              </nz-form-control>
+            </nz-form-item>
+
+            <!-- Last Name -->
+            <nz-form-item style="width:400px">
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="lastName">Last Name</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input cannot be empty">
+                <input nz-input formControlName="lastName" id="lastName" placeholder="Last Name" type="text"/>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <div class="form-row-div">
+          <!-- Email Address -->
+          <div class="form-row-div">
+            <nz-form-item style="width: 400px;">
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+                <input nz-input formControlName="email" id="email" placeholder="Email Address" type="email"/>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-row-div">
+            <nz-form-item style="width: 400px;">
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired>Contact</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="resumeFormBuilder.controls['phone']" nzErrorTip="Please input your phone number!">
+                <nz-input-group>
+                  <input formControlName="phone" id="'phone'" nz-input type="text" placeholder="Phone Number"/>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <!-- Country -->
+          <div class="form-row-div">
+            <nz-form-item style="width: 400px;">
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="country">Country</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24">
+                <input nz-input formControlName="country" id="country" placeholder="Country" type="text"/>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="form-row-div">
+          <!-- Github Link -->
+         <div class="form-row-div">
+            <nz-form-item style="width: 400px;">
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="githubLink" class="fab fa-github"></nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Invalid URL">
+                <input nz-input formControlName="githubLink" id="githubLink" placeholder="GitHub URL"/>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <!-- LinkedIn Link -->
+          <div class="form-row-div">
+            <nz-form-item style="width: 400px;">
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="linkedinLink" class="fab fa-linkedin"></nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Invalid URL">
+                <input nz-input formControlName="linkedinLink" id="linkedinLink" placeholder="LinkedIn Profile URL"/>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <!-- Other link -->
+          <div class="form-row-div">
+            <nz-form-item style="width: 400px;">
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="optionalLink" class="fas fa-globe"></nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Invalid URL">
+                <input nz-input formControlName="optionalLink" id="optionalLink" placeholder="Other URL"/>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="form-row" >
+          <!-- Education Block -->
+          <div class="flexContainer" style="display: flex; justify-content: space-between; margin-left: -100px;">
+            <span style="margin-left: 87px; font-weight: bold;">Education</span>
+            <button (click)="addEducation()" type="button" style="margin-left: 250px; border: none;background: transparent;color: purple;">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Adding Education -->
+          <div formArrayName="education" *ngFor="let block of education.controls; let i = index">
+            <div [formGroupName]="i" [ngClass]="{'education' : education.length > 1}">
+
+              <span>
+                <button nz-button nzType="text" (click)="removeEducation(i)" style="margin-left: 506px; border: none;background: transparent;color: purple;">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+              </span>
+
+              <div class="form-row">
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="school">School</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                    <input nz-input formControlName="school" id="school" placeholder="School Name"/>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+
+              <div class="form-row">
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="degree">Degree</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                    <input nz-input formControlName="degree" id="degree" placeholder="Degree"/>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+
+              <div class="form-row">
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="fieldOfStudy">Field of Study</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                    <input nz-input formControlName="fieldOfStudy" id="fieldOfStudy" placeholder="Field of Study"/>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+
+              <div class="form-row">
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="startYear">Start Year</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                    <input nz-input formControlName="startYear" id="startYear" placeholder="Start Year" type="date"/>
+                    <span *ngIf="education?.get('startYear')?.hasError('startEndMismatch') && (education?.get('startYear')?.dirty || education?.get('endYear')?.dirty)">
+                      Start date cannot be later than the end date.
+                    </span>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+
+              <div class="form-row">
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="endYear">End Year</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                    <input nz-input formControlName="endYear" id="endYear" placeholder="End Year" type="date"/>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+
+              <hr *ngIf="i !== education.controls.length - 1" />
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Experience Block -->
+        <div class="flexContainer" style="display: flex; justify-content: space-between; margin-left: -100px;">
+          <span style="margin-left: 87px; font-weight: bold;">Experience</span>
+          <button (click)="addExperience()" style="margin-left: 241px; border: none;background: transparent;color: purple;">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Adding Experience -->
+        <div formArrayName="experience" *ngFor="let block of experience.controls; let i = index">
+          <div [formGroupName]="i" [ngClass]="{'experience' : experience.length > 1}">
+
+            <span>
+              <button (click)="removeExperience(i)" style="margin-left: 506px; border: none;background: transparent;color: purple;">
+                <i class="fa fa-minus"></i>
+              </button>
+            </span>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="company">Company</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                  <input nz-input formControlName="company" id="company" placeholder="Company"/>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="position">Position</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                  <input nz-input formControlName="position" id="position" placeholder="Position"/>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="startYear">Start Year</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                  <input nz-input formControlName="startYear" id="startYear" placeholder="Start Year" type="date"/>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="endYear">End Year</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                  <input nz-input formControlName="endYear" id="endYear" placeholder="End Year" type="date"/>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="description">Description</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                  <textarea nz-input formControlName="description" id="description" placeholder="Description"></textarea>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Skills Block -->
+        <div class="flexContainer" style="display: flex; justify-content: space-between; margin-left: -100px;">
+          <span style="margin-left: 87px; font-weight: bold;">Skills</span>
+          <button (click)="addSkills()" style="margin-left: 316px; border: none;background: transparent;color: purple;">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Adding Skills -->
+        <div formArrayName="skills" *ngFor="let block of skills.controls; let i = index">
+          <div [formGroupName]="i" [ngClass]="{'skills' : skills.length > 1}">
+
+            <span>
+              <button (click)="removeSkills(i)" style="margin-left: 506px; border: none;background: transparent;color: purple;">
+                <i class="fa fa-minus"></i>
+              </button>
+            </span>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                  <input nz-input formControlName="name" id="name" placeholder="Name"/>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="level">Level</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                  <nz-select formControlName="level" id="level" placeholder="Level">
+                    <nz-option nzLabel="Beginner" nzValue="Beginner"></nz-option>
+                    <nz-option nzLabel="Intermediate" nzValue="Intermediate"></nz-option>
+                    <nz-option nzLabel="Expert" nzValue="Expert"></nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Projects Block -->
+        <div class="flexContainer" style="display:flex; justify-content: space-between; margin-left: -100px;">
+          <span style="margin-left: 87px; font-weight: bold;">Projects</span>
+          <button (click)="addProjects()" style="margin-left: 280px; border: none;background: transparent;color: purple;">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Adding Projects -->
+        <div formArrayName="projects" *ngFor="let block of projects.controls; let i = index">
+          <div [formGroupName]="i" [ngClass]="{'projects' : projects.length > 1}">
+
+            <span>
+              <button (click)="removeProjects(i)" style="margin-left: 506px; border: none;background: transparent;color: purple;">
+                <i class="fa fa-minus"></i>
+              </button>
+            </span>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="projectName">Name</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Input cannot be empty">
+                  <input nz-input formControlName="projectName" id="projectName" placeholder="Name"/>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div class="form-row">
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="projectDescription">Description</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24">
+                  <textarea nz-input formControlName="projectDescription" id="projectDescription" placeholder="Description"></textarea>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" style="width:100px; color: purple; margin-bottom: 15px;">
+          Submit
+        </button>
+
+      </form>
+
+    </div>
+
   </div>
 </div>
+
+<style>
+
+  [nz-form] {
+    max-width: 600px;
+  }
+
+  .phone-select {
+    width: 80px !important;
+    align-items: center;
+  }
+
+  .form-row-div {
+  display: flex;
+  justify-content: center; /* Horizontally centers content */
+  align-items: center; /* Vertically centers content */
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust the space between elements as needed */
+}
+
+</style>
+
